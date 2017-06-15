@@ -31,3 +31,4 @@ java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-S
 Use Consumer Class of this jar
 ------------------------------
 java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-SNAPSHOT.jar com.self.project.micro.services.actors.consumers.Consumers ../conf/application.conf TOPIC_NAME
+
