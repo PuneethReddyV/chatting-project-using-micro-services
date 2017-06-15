@@ -21,7 +21,7 @@ cd PROJECT_HOME/target/communicator/lib <br />
 
 Use Producer class of this jar
 -----------------------------
-java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-SNAPSHOT.jar com.self.project.micro.services.producers.Producers ../conf <br />
+java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-SNAPSHOT.jar com.self.project.micro.services.producers.Producers ../conf/application.conf <br />
 
 Use Consumer Actors of this jar
 -------------------------------
