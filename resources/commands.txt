@@ -1,0 +1,27 @@
+Strart Zoo Keeper 
+-----------------
+cd ZOO_KEEPER_HOME
+bin/zkServer.sh start
+
+Start Kafka
+------------
+cd KAFKA_HOME
+bin/kafka-server-start.sh config/server.properties
+
+sample command create topic on kafka server
+-------------------------------------------
+cd KAFKA_HOME
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic talk-to-client1
+
+Use Producer class of this jar
+-------------------
+java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-SNAPSHOT.jar com.self.project.micro.services.producers.Producers ../conf
+
+Use Consumer Actors of this jar
+-------------------
+java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-SNAPSHOT.jar com.self.project.micro.services.actors.consumers.Consumers ../conf/application.conf TOPIC_NAME
+
+
+Use Consumer Class of this jar
+-------------------
+java -Dlogback.configurationFile="../conf/logback.xml" -cp MicroServices-0.0.1-SNAPSHOT.jar com.self.project.micro.services.actors.consumers.Consumers ../conf/application.conf TOPIC_NAME
