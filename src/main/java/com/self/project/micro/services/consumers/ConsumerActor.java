@@ -43,11 +43,9 @@ public class ConsumerActor extends UntypedActor{
 	private KafkaConsumer<String, String> consumer;
 
 	public ConsumerActor(final Path configFileLocation, final String privateChannelName){
-		System.out.println(configFileLocation.toString());
 		this.configFileLocation = configFileLocation;
 		this.privateChannelName = privateChannelName;
 		this.config = ConfigFactory.parseFile(this.configFileLocation.toFile());
-		System.out.println(this.config);
 		this.broadCastingGroup = this.config.getString(Constants.BROAD_CAST_VALUE);
 		this.producer = new KafkaProducer<>(CommunicatorUtil.getProperties(this.config.getConfig(Constants.KAFKA_PRODUCER_CONFIG_HOME)));
 		Properties props = CommunicatorUtil.getProperties(this.config.getConfig(Constants.KAFKA_CONSUMER_CONFIG_HOME));
